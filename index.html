@@ -1,268 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>奇记清单</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      li {
-        list-style: none;
-      }
-      body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        font-size: 16px;
-      }
-      a {
-        text-decoration: none;
-      }
-      .header {
-        padding: 3em 0;
-        background-color: #4e8bfa;
-        color: #fff;
-        text-align: center;
-      }
-      .header h1 {
-        line-height: 4em;
-        font-size: 2.5em;
-        font-family: STSongti-SC-Black, STSongti-SC;
-      }
-      .header .slogan {
-        font-size: 1.2em;
-      }
-      .main {
-        flex: 1;
-        /* width: 700px; */
-        /* margin: 0 auto; */
-      }
-      .download {
-        width: 1000px;
-        display: flex;
-        justify-content: space-between;
-        margin: 2em auto;
-        padding: 1.5em 1em 1em;
-        border-radius: 6px;
-      }
-      .download .item {
-        width: 180px;
-        text-align: center;
-        color: #00f;
-      }
-      .download img {
-        width: 100%;
-        margin: 1em 0;
-      }
-      .download .btn {
-        display: inline-block;
-        padding: 0.3em 1.5em;
-        color: #00f;
-        font-size: 14px;
-        border-radius: 10px;
-      }
-      .download a.btn {
-        border: 1px solid #00f;
-      }
-      .desc {
-        margin: 3em 0 2em;
-        text-align: center;
-      }
-      .desc .desc-title {
-        font-size: 1.5em;
-        line-height: 2em;
-      }
-      .desc .desc-text {
-        color: #797979;
-      }
-      .desc .desc-important {
-      	font-size: 2em;
-        color: #3C80F6;
-      }
-      .panel-add {
-        padding: 2em 1em;
-        background-color: #f2f2f2;
-      }
-      .panel-focus .panel-list {
-        width: 700px;
-        justify-content: space-between;
-      }
-      
-      .panel-title {
-        position: relative;
-        margin-top: 1em;
-        padding-bottom: 0.2em;
-        color: #f87f86;
-        text-align: center;
-        font-size: 2em;
-        font-weight: 500;
-      }
-      .panel-title:before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 1em;
-        height: 5px;
-        background-color: #b2c4c8;
-      }
-      .panel-list {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        width: 1000px;
-        margin: 0 auto;
-        margin-bottom: 2em;
-      }
-      .panel-item {
-        width: 200px;
-        margin-top: 1em;
-        margin-left: 1em;
-        text-align: center;
-      }
-      .focus-list {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        width: 1000px;
-        margin: 0 auto;
-        margin-bottom: 2em;
-      }
-      .focus-item {
-        width: 100px;
-        margin-top: 4em;
-        margin-left: 1em;
-        text-align: center;
-      }
-      .focus-dev {
-        position: relative;
-        margin-top: 1em;
-        padding-bottom: 0.2em;
-        text-align: center;
-        font-size: 10px;
-      }
-      .focus-item img {
-        width: 100%;
-      }
-      .panel-dev {
-        position: relative;
-        margin-top: 1em;
-        padding-bottom: 0.2em;
-        text-align: center;
-        font-size: 10px;
-      }
-      .panel-item img {
-        width: 100%;
-      }
-      footer {
-        margin: 1em;
-        text-align: center;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .header {
+            padding: 3em 0;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            z-index: 999;
+            width: 100%;
+        }
+
+        .header h1 {
+            line-height: 4em;
+            font-size: 2.5em;
+            font-family: STSongti-SC-Black, STSongti-SC;
+        }
+
+        .header .slogan {
+            font-size: 1.2em;
+        }
+
+        .main {
+            position: absolute;
+            top: 12rem;
+            z-index: 999;
+            width: 100%;
+        }
+
+        .download {
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            margin: 2em auto;
+            padding: 1.5em 1em 1em;
+            border-radius: 6px;
+        }
+
+        .download .item {
+            width: 180px;
+            text-align: center;
+            color: white;
+        }
+
+        .download img {
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .download .btn {
+            display: inline-block;
+            padding: 0.3em 1.5em;
+            color: white;
+            font-size: 14px;
+            border-radius: 10px;
+        }
+
+        .download a.btn {
+            border: 1px solid white;
+        }
+
+        .desc {
+            margin: 3em 0 2em;
+            text-align: center;
+        }
+
+        .desc .desc-title {
+            font-size: 1.5em;
+            line-height: 2em;
+            color: white;
+        }
+
+        .desc .desc-text {
+            color: white;
+        }
+
+        .desc .desc-important {
+            font-size: 2em;
+            color: white;
+        }
+
+        .panel-add {
+            padding: 2em 1em;
+            /*background-color: #f2f2f2;*/
+        }
+
+        .panel-focus .panel-list {
+            width: 700px;
+            justify-content: space-between;
+        }
+
+        .panel-title {
+            position: relative;
+            margin-top: 1em;
+            padding-bottom: 0.2em;
+            color: white;
+            text-align: center;
+            font-size: 2em;
+            font-weight: 500;
+        }
+
+        .panel-title:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1em;
+            height: 5px;
+            background-color: #b2c4c8;
+        }
+
+        .panel-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 1000px;
+            margin: 0 auto;
+            margin-bottom: 2em;
+        }
+
+        .panel-item {
+            width: 200px;
+            margin-top: 1em;
+            margin-left: 1em;
+            text-align: center;
+        }
+
+        .focus-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 1000px;
+            margin: 0 auto;
+            margin-bottom: 2em;
+        }
+
+        .focus-item {
+            width: 100px;
+            margin-top: 4em;
+            margin-left: 1em;
+            text-align: center;
+        }
+
+        .focus-dev {
+            position: relative;
+            margin-top: 1em;
+            padding-bottom: 0.2em;
+            text-align: center;
+            font-size: 10px;
+            color: white;
+        }
+
+        .focus-item img {
+            width: 100%;
+        }
+
+        .panel-dev {
+            position: relative;
+            margin-top: 1em;
+            padding-bottom: 0.2em;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .panel-item img {
+            width: 100%;
+
+        }
+
+        .panel-item > p {
+            color: white;
+        }
+
+        footer {
+            margin: 1em;
+            text-align: center;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+<div style="position: relative" id="bgcCanvans">
     <div class="header">
-      <h1>奇记清单：让专注更专注</h1>
-      <span class="slogan">你身边的效率管家</span>
+        <h1>奇记清单：让专注更专注</h1>
+        <span class="slogan">你身边的效率管家</span>
     </div>
     <div class="main">
-      <div class="download">
-        <div class="item">
-          <img src="https://p1.ssl.qhimg.com/t01bbe74bc746e50ebb.png" alt="" />
-          <span class="btn">iPhone/iPad 扫码下载：密码123456</span>
+        <div class="download">
+            <div class="item">
+                <img src="https://p1.ssl.qhimg.com/t01bbe74bc746e50ebb.png" alt=""/>
+                <span class="btn">iPhone/iPad 扫码下载：密码123456</span>
+            </div>
+            <div class="item">
+                <img src="http://p0.qhimg.com/t01bcda303100124044.png" alt=""/>
+                <span class="btn">Android 扫码下载：密码123456</span>
+            </div>
+            <div class="item">
+                <img src="http://p0.qhimg.com/t01303172172e1de3bc.png" alt=""/>
+                <a href="http://62.234.66.219:8080/todo/download/mac" class="btn">macOS 点击下载</a>
+            </div>
         </div>
-        <div class="item">
-          <img src="http://p0.qhimg.com/t01bcda303100124044.png" alt="" />
-          <span class="btn">Android 扫码下载：密码123456</span>
-        </div>        
-        <div class="item">
-          <img src="http://p0.qhimg.com/t01303172172e1de3bc.png" alt="" />
-          <a href="http://62.234.66.219:8080/todo/download/mac" class="btn">macOS 点击下载</a>
+        <div class="panel-box panel-add">
+            <div class="desc">
+                <div class="desc-title">一款极简的待办事项工具</div>
+                <div><span class="desc-text">使用</span><span class="desc-important"> 奇记清单APP </span><span
+                        class="desc-text">扫码加入：</span></div>
+
+            </div>
+            <ul class="panel-list">
+                <li class="panel-item">
+                    <img
+                            src="http://p0.qhimg.com/t013398374aecebf3e3.png"
+                            alt=""/>
+                    <p>问题反馈</p>
+                </li>
+            </ul>
         </div>
-      </div>
-      <div class="panel-box panel-add">
-        <div class="desc">
-          <p class="desc-title">一款极简的待办事项工具</p>
-          <span class="desc-text">使用</span><span class="desc-important"> 奇记清单APP </span><span class="desc-text">扫码加入：</span>
-        </div>
-        <ul class="panel-list">
-          <li class="panel-item">
-            <img
-              src="http://p0.qhimg.com/t01265edef941c26eed.png"
-              alt=""
-            />
-            <p>泛前端分享</p>
-          </li>
-          <li class="panel-item">
-            <img
-              src="http://p0.qhimg.com/t01305ecdb8be1e218a.png"
-              alt=""
-            />
-            <p>奇舞团事务</p>
-          </li>
-          <li class="panel-item">
-            <img
-              src="http://p0.qhimg.com/t013398374aecebf3e3.png"
-              alt=""
-            />
-            <p>用户反馈</p>
-          </li>
-        </ul>
-      </div>
-      <div class="panel-box panel-focus">
-        <p class="panel-title">开发团队</p>
-        <ul class="focus-list">
-          <li class="focus-item">
-            <img src="https://p5.ssl.qhimg.com/t0118ecf816483b26a1.png" />
-            <p class ="focus-dev">黄先帅-PM</p>
-          </li>
-          <li class="focus-item">
-            <img src="https://p0.ssl.qhimg.com/t01fd344592892ef183.png" />
-            <p class ="focus-dev">杨鹏-Java</p>
-          </li>
-          <li class="focus-item">
-            <img src="http://p0.qhimg.com/t01d3ba7aacc10317bc.png" />
-            <p class ="focus-dev">文应志-Flutter</p>
-          </li>
-          <li class="focus-item">
-            <img src="https://p4.ssl.qhimg.com/t01046b2d10c69d576a.png" />
-            <p class ="focus-dev">秦万里-iOS</p>
-          </li>
-          <li class="focus-item">
-            <img src="https://p5.ssl.qhimg.com/t01bcd24a45aef1ba33.png" />
-            <p class ="focus-dev">刘思齐-iOS</p>
-          </li>
-          <li class="focus-item">
-            <img src="http://p0.qhimg.com/t01e738635a0eb8fdc4.png" />
-            <p class ="focus-dev">粱幸芝-FE</p>
-          </li>
-        </ul>
-      </div>
-      <!-- <div class="panel-box">
-        <p class="panel-title">关注我们</p>
-        <ul class="focus-list">
-          <li class="focus-item">
-            <img
-              src="https://p1.ssl.qhimg.com/t01bbe74bc746e50ebb.png"
-              alt=""
-            />
-          </li>
-          <li class="focus-item">
-            <img
-              src="https://p1.ssl.qhimg.com/t01bbe74bc746e50ebb.png"
-              alt=""
-            />
-          </li>
-        </ul>
-      </div> -->
     </div>
-    <footer>
-      &copy; 2020 奇舞团
-    </footer>
-  </body>
+</div>
+
+</body>
+<script src='js/lvrjwz.js'></script>
+<script src='js/simplex-noise.min.js'></script>
+<script src="js/index.js"></script>
 </html>
